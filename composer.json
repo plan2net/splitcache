@@ -1,0 +1,21 @@
+{
+  "name": "plan2net/splitcache",
+  "description": "Split cache-entries to multiple backends based on lifetime",
+  "type": "typo3-cms-extension",
+  "license": "GPL-2.0",
+  "version": "0.0.3",
+  "authors": [
+    {
+      "name": "Oliver Gassner",
+      "email": "og@plan2.net"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": ">=8.7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Plan2net\\Splitcache\\": "Classes/"
+    }
+  }
+}
