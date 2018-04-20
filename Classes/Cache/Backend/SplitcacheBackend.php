@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-namespace Plan2net\Splitcache\Backend;
+namespace Plan2net\Splitcache\Cache\Backend;
 
 use TYPO3\CMS\Core\Cache\Backend\AbstractBackend;
 use TYPO3\CMS\Core\Cache\Backend\BackendInterface;
