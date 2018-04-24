@@ -2,7 +2,7 @@
 Split TYPO3 cache-entries to multiple backends based on lifetime
 
 
-Sample config f. cache_pages.
+Sample config f. cache_pages. 
 ```
 ['SYS']['caching']['cacheConfigurations']['cache_pages'] = 
 	[

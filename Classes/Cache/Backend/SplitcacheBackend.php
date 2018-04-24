@@ -59,6 +59,11 @@ class SplitcacheBackend extends AbstractBackend implements TaggableBackendInterf
     protected $maxLifetimes = [];
 
     /**
+     * @var int
+     */
+    protected $tempCacheContentWorkaround = 0;
+
+    /**
      * Enable data compression
      *
      * @param bool $compression TRUE to enable compression
@@ -99,7 +104,7 @@ class SplitcacheBackend extends AbstractBackend implements TaggableBackendInterf
             $lifetime = $this->defaultLifetime;
         }
         $backendKey = $this->getBackendKeyForLifetime($lifetime);
-        if ($backendKey > 0) {
+        if ($this->tempCacheContentWorkaround && ($backendKey > 0)) {
             $this->removeFromFasterCaches($entryIdentifier, $backendKey);
         }
         $this->backends[$backendKey]->set($entryIdentifier, $data, $tags, $lifetime);
@@ -299,5 +304,21 @@ class SplitcacheBackend extends AbstractBackend implements TaggableBackendInterf
             }
             $this->maxLevel = max(array_keys($this->levels));
         }
+    }
+
+    /**
+     * @return int
+     */
+    public function getTempCacheContentWorkaround(): int
+    {
+        return $this->tempCacheContentWorkaround;
+    }
+
+    /**
+     * @param int $tempCacheContentWorkaround
+     */
+    public function setTempCacheContentWorkaround(int $tempCacheContentWorkaround)
+    {
+        $this->tempCacheContentWorkaround = $tempCacheContentWorkaround;
     }
 }
