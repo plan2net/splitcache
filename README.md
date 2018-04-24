@@ -6,7 +6,7 @@ Sample config f. cache_pages.
 ```
 ['SYS']['caching']['cacheConfigurations']['cache_pages'] = 
 	[
-        'backend' => \Plan2net\Splitcache\Backend\SplitcacheBackend::class,
+        'backend' => \Plan2net\Splitcache\Cache\Backend\SplitcacheBackend::class,
         'options' => [
             'defaultLifetime' => 3600,
             'levels' => [
